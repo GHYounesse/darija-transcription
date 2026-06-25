@@ -1,3 +1,14 @@
+---
+title: Darija Transcription & Diarization API
+emoji: 🚀
+colorFrom: blue
+colorTo: purple
+sdk: docker
+app_port: 7860
+pinned: false
+suggested_hardware: t4-small
+license: apache-2.0
+---
 # Darija Transcription & Diarization API
 
 A FastAPI-based service for transcribing and diarizing Moroccan Darija audio using OpenAI Whisper with LoRA fine-tuning and pyannote speaker diarization.
@@ -175,14 +186,12 @@ curl -X POST "http://localhost:8000/transcribe_with_export?format=vtt" \
   -d '{
     "audio_url": "https://example.com/audio.wav"
   }' | jq -r '.content'
-
 # Export to SRT (SubRip subtitles)
 curl -X POST "http://localhost:8000/transcribe_with_export?format=srt" \
   -H "Content-Type: application/json" \
   -d '{
     "audio_url": "https://example.com/audio.wav"
   }' | jq -r '.content'
-
 # Export to TXT (plain text)
 curl -X POST "http://localhost:8000/transcribe_with_export?format=txt" \
   -H "Content-Type: application/json" \

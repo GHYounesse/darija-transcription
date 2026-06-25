@@ -2,11 +2,12 @@ FROM nvidia/cuda:12.1.0-devel-ubuntu22.04
 
 WORKDIR /app
 
-# Install Python and pip
+# Install Python, pip, and ffmpeg (required for audio processing)
 RUN apt-get update && apt-get install -y \
     python3.10 \
     python3-pip \
     git \
+    ffmpeg \
     && rm -rf /var/lib/apt/lists/*
 
 # Upgrade pip
